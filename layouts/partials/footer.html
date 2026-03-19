@@ -34,6 +34,11 @@
         {{ end }}
 
         </div>
+        {{ with .Site.GetPage "/impressum" }}
+        <div class="copyright">
+            <a href="{{ .RelPermalink }}">Impressum</a>
+        </div>
+        {{ end }}
         <div class="icons">
 
         {{ if .Site.Params._500px }}
