@@ -2,7 +2,7 @@
 <div class="main column">
     <div class="container">
         <div class="content">
-            {{ range where .Data.Pages "Title" "Home" }}
+            {{ range where .Pages "Title" "Home" }}
                 <div class="markdown">
                 {{ .Content }}
                 </div>
@@ -32,11 +32,11 @@
             {{ end }}
 
             <div class="best-posts">
-            {{ $nbPosts := len (where .Data.Pages "Params.best" true) }}
+            {{ $nbPosts := len (where .Pages "Params.best" true) }}
             {{ if gt $nbPosts 0 }}
                 <div class="page-heading">Best posts</div>
                 <ul>
-                {{ range sort .Data.Pages "Date" "desc" }}
+                {{ range sort .Pages "Date" "desc" }}
                     {{ if eq .Params.best true }}
                         {{ partial "li.html" . }}
                     {{ end }}

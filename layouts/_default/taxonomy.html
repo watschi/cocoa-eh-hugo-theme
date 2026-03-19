@@ -5,7 +5,7 @@
             <div class="posts">
                 <div class="page-heading">Posts about {{ .Title }}</div>
                 <ul>
-                    {{ range .Data.Pages.ByPublishDate }}
+                    {{ range .Pages.ByPublishDate }}
                         {{ partial "li.html" . }}
                     {{ end }}
                 </ul>
